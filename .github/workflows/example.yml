@@ -29,6 +29,9 @@ jobs:
       - name: Build
         run: python example/main.py
 
+      - name: Minify
+        uses: anthonyftwang/minify-action@v1.0.1
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
