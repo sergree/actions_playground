@@ -1,4 +1,5 @@
 import html
+from datetime import datetime
 from distutils.dir_util import copy_tree
 from pathlib import Path
 from typing import List
@@ -9,7 +10,8 @@ def render(items: List[str]):
         template = f.read()
 
     document = template.format(
-        content="".join([f"<p>{html.escape(x)}</p>" for x in items])
+        now=datetime.utcnow(),
+        content="".join([f"<p>{html.escape(x)}</p>" for x in items]),
     )
 
     Path("build").mkdir(parents=True, exist_ok=True)
