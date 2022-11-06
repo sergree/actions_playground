@@ -1,8 +1,14 @@
-name: Stress Test
+name: Push To Another Branch Test
 
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   do-some-stuff:
