@@ -13,6 +13,4 @@ jobs:
         with:
           python-version: '3.10'
       - run: pip install -r example/requirements.txt
-      - run: cd example
-      - working-directory: example
-        run: python main.py
+      - run: python main.py
