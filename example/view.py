@@ -1,4 +1,6 @@
 import html
+from distutils.dir_util import copy_tree
+from pathlib import Path
 from typing import List
 
 
@@ -10,5 +12,8 @@ def render(items: List[str]):
         content="".join([f"<p>{html.escape(x)}</p>" for x in items])
     )
 
-    with open("index.html", "w") as f:
+    Path("build").mkdir(parents=True, exist_ok=True)
+    with open("build/index.html", "w") as f:
         f.write(document)
+
+    copy_tree("static", "build/static")

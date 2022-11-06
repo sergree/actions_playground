@@ -11,7 +11,7 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
-  do-some-stuff:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -20,3 +20,6 @@ jobs:
           python-version: '3.10'
       - run: pip install -r example/requirements.txt
       - run: python example/main.py
+
+  deploy:
+    needs: build
