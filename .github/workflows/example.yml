@@ -1,6 +1,4 @@
-name: Push To Another Branch Test
-
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: example
 
 on:
   workflow_dispatch:
@@ -15,8 +13,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Python Setup
