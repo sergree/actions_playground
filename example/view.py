@@ -19,3 +19,6 @@ def render(items: List[str]):
         f.write(document)
 
     copy_tree("static", "build/static")
+
+    with open("build/example_file_001.html", "w") as f:
+        f.write("001")
