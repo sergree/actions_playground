@@ -20,5 +20,5 @@ def render(items: List[str]):
 
     copy_tree("static", "build/static")
 
-    with open("build/example_file_001.html", "w") as f:
-        f.write("001")
+    with open("build/example_file_002.html", "w") as f:
+        f.write("002")
